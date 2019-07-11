@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\bin\Debug\netcoreapp2.1\Shop.Domain.deps.json
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\bin\Debug\netcoreapp2.1\Shop.Domain.dll
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\bin\Debug\netcoreapp2.1\Shop.Domain.pdb
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.AssemblyInfo.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.dll
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.pdb
