@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+    <div id="app">
+        <button v-on:click="getProducts">Get Product</button>
+        <div>
+            <p v-for="product in products">
+                {{product.id}} - {{product.name}} - {{product.description}}
+            </p>
+        </div>
+    </div>
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/Admin/main.js"></script>
+}

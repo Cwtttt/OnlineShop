@@ -36,3 +36,4 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Do
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Application.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Database.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Domain.pdb
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Index.g.cshtml.cs
