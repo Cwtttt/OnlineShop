@@ -1,6 +1,11 @@
 ﻿var app = new Vue({
     el: '#app',
     data: {
+        productModel: {
+            name: "Product Name",
+            description: "Product Description",
+            value: 1.99
+        },
         loading: false,
         products: []
     },
@@ -18,11 +23,21 @@
                 .then(() => {
                     this.loading = false;
                 });
+        },
+        createProduct() {
+            axios.post('/Admin/products', this.productModel)
+                .then(res => {
+                    console.log(res.data);
+                    this.products.push(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .then(() => {
+                    this.loading = false;
+                });
         }
     },
     computed: {
-        formatPrice: function() {
-            return "TEST " + this.price;
-        }
     }
 });
