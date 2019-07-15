@@ -20,7 +20,6 @@ namespace Shop.Application.ProductsAdmin
             {
                 Id = x.Id,
                 Name = x.Name,
-                Description = x.Description,
                 Value = x.Value
             });
         public class ProductViewModel
