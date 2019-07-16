@@ -37,3 +37,7 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Ap
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Database.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\bin\Debug\netcoreapp2.1\Shop.Domain.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Index.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\_AdminLayout.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\_ViewStart.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Orders.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Stock.g.cshtml.cs
