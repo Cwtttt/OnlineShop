@@ -12,3 +12,5 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\bin\Debug\netcoreapp2.
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\bin\Debug\netcoreapp2.1\Shop.Database.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\bin\Debug\netcoreapp2.1\Shop.Domain.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\obj\Debug\netcoreapp2.1\Shop.Application.csproj.CopyComplete
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\bin\Debug\netcoreapp2.1\Newtonsoft.Json.dll
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Application\bin\Debug\netcoreapp2.1\Newtonsoft.Json.xml
