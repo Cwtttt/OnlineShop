@@ -6,3 +6,4 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Sho
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.AssemblyInfo.cs
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.dll
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.pdb
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Domain\obj\Debug\netcoreapp2.1\Shop.Domain.csprojAssemblyReference.cache
