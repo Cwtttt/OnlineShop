@@ -1,0 +1,42 @@
+﻿@page
+@model Shop.Ui.Pages.Checkout.CustomerInformationModel
+@{
+}
+
+<div>
+    <form  method="post">
+        <div>
+            <input asp-for="Customerinformation.Firstname" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.LastName" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.PhoneNumber" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.Email" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.Address1" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.Address2" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.City" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <div>
+            <input asp-for="Customerinformation.PostCode" />
+            <span asp-validation-for="Customerinformation.Firstname"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>        
+</div>
