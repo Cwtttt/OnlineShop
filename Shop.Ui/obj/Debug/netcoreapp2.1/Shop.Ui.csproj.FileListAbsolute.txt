@@ -43,3 +43,5 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\P
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Stock.g.cshtml.cs
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Product.g.cshtml.cs
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Cart.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Components\Cart\Default.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Components\Cart\Small.g.cshtml.cs
