@@ -4,12 +4,8 @@ using System.Text;
 
 namespace Shop.Domain.Models
 {
-    public class Order
+    public class CustomerInformation
     {
-        public int Id { get; set; }
-        public string OrderRef { get; set; }
-        public string StripeReference { get; set; }
-
         public string Firstname { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -19,7 +15,5 @@ namespace Shop.Domain.Models
         public string Address2 { get; set; }
         public string City { get; set; }
         public string PostCode { get; set; }
-
-        public ICollection<OrderProduct> Orderproducts { get; set; }
     }
 }
