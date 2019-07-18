@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Shop.Application.Cart;
+using Shop.Application.Orders;
 using Shop.Database;
 using Stripe;
 
@@ -36,12 +37,12 @@ namespace Shop.Ui.Pages.Checkout
             return Page();
         }
 
-        public IActionResult OnPost(string stripeEmail, string stripeToken)
+        public async Task<IActionResult> OnPost(string stripeEmail, string stripeToken)
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
 
-            var CardOrder = new GetOrder(HttpContext.Session, _ctx).Do();
+            var CartOrder = new GetOrder(HttpContext.Session, _ctx).Do();
 
             var customer = customers.Create(new CustomerCreateOptions
             {
@@ -51,12 +52,32 @@ namespace Shop.Ui.Pages.Checkout
 
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = CardOrder.GetTotalCharge(),
+                Amount = CartOrder.GetTotalCharge(),
                 Description = "Shop Purchase",
                 Currency = "gbp",
                 CustomerId = customer.Id
             });
 
+            await new CreateOrder(_ctx).Do(new CreateOrder.Request
+            {
+                StripeReference = charge.OrderId,
+
+                Firstname = CartOrder.CustomerInformation.Firstname,
+                LastName = CartOrder.CustomerInformation.LastName,
+                Email = CartOrder.CustomerInformation.Email,
+                PhoneNumber = CartOrder.CustomerInformation.PhoneNumber,
+                Address1 = CartOrder.CustomerInformation.Address1,
+                Address2 = CartOrder.CustomerInformation.Address2,
+                City = CartOrder.CustomerInformation.City,
+                PostCode = CartOrder.CustomerInformation.PostCode,
+
+                Stocks = CartOrder.Products.Select(x => new CreateOrder.Stock
+                {
+                    StockId = x.StockId,
+                    Qty = x.Qty
+                })
+                .ToList()
+            });
 
             return RedirectToPage("/Index");
         }
