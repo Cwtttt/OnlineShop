@@ -47,3 +47,4 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\P
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Components\Cart\Small.g.cshtml.cs
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Checkout\CustomerInformation.g.cshtml.cs
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Checkout\Payment.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Order.g.cshtml.cs
