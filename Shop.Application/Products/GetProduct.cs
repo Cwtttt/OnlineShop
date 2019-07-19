@@ -19,7 +19,7 @@ namespace Shop.Application.Products
 
         public async Task<ProductViewModel> Do(string name)
         {
-            var stocksOnHold = _ctx.StocksOnHolds.Where(x => x.ExpiryDate < DateTime.Now).ToList();
+            var stocksOnHold = _ctx.StocksOnHold.Where(x => x.ExpiryDate < DateTime.Now).ToList();
 
             if(stocksOnHold.Count > 0)
             {
@@ -30,7 +30,7 @@ namespace Shop.Application.Products
                     stock.Qty = stock.Qty + stocksOnHold.FirstOrDefault(x => x.StockId == stock.Id).Qty;
                 }
 
-                _ctx.StocksOnHolds.RemoveRange(stocksOnHold);
+                _ctx.StocksOnHold.RemoveRange(stocksOnHold);
 
                 await _ctx.SaveChangesAsync();
             }

@@ -18,9 +18,9 @@ namespace Shop.Application.StockAdmin
 
         public async Task<bool> Do(int id)
         {
-            var stock = _ctx.StocksOnHolds.FirstOrDefault(x => x.Id == id);
+            var stock = _ctx.StocksOnHold.FirstOrDefault(x => x.Id == id);
 
-            _ctx.StocksOnHolds.Remove(stock);
+            _ctx.StocksOnHold.Remove(stock);
 
             await _ctx.SaveChangesAsync();
             return true;
