@@ -42,7 +42,7 @@ namespace Shop.Application.Orders
 
         public async Task<bool> Do(Request request)
         {
-            var stocksToUpdate = _ctx.Stock.Where(x => request.Stocks.Any(y => y.StockId == x.Id)).ToList();
+            var stocksToUpdate = _ctx.StocksOnHolds.Where(x => request.Stocks.Any(y => y.StockId == x.Id)).ToList();
 
             foreach(var stock in stocksToUpdate)
             {
