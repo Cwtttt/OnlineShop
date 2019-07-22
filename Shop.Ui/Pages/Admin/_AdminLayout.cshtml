@@ -21,25 +21,28 @@
         <div class="columns">
             <div class="column is-3">
                 <div class="menu">
-                    <p class="menu-label">Store menu</p>
-                    <ul class="menu-list">
-                        <li><a asp-page="/Admin/Index">Products</a></li>
-                        <li><a asp-page="/Admin/OrderManagment">Managment</a></li>
-                        <li><a asp-page="/Admin/Stock">Stock</a></li>
-                    </ul>
-                    @if ((await authService.AuthorizeAsync(User, "Admin")).Succeeded)
+                    @if ((await authService.AuthorizeAsync(User, "Manager")).Succeeded)
                     {
-                    <p class="menu-label">Admin menu</p>
-                    <ul class="menu-list">
-                        <li><a asp-page="/Admin/Index">Configure Users</a></li>
-
-                    </ul>
+                        <p class="menu-label">Store menu</p>
+                        <ul class="menu-list">
+                            <li><a asp-page="/Admin/Index">Products</a></li>
+                            <li><a asp-page="/Admin/OrderManagment">Managment</a></li>
+                            <li><a asp-page="/Admin/Stock">Stock</a></li>
+                        </ul>
                     }
-                    <p class="menu-label"></p>
-                    <ul class="menu-list">
-                        <li>    <a asp-page="/Index">Back to main</a></li>
-                    </ul>
-                </div>
+                        @if ((await authService.AuthorizeAsync(User, "Admin")).Succeeded)
+                        {
+                            <p class="menu-label">Admin menu</p>
+                            <ul class="menu-list">
+                                <li><a asp-page="/Admin/ConfigureUsers">Configure Users</a></li>
+
+                            </ul>
+                        }
+                        <p class="menu-label"></p>
+                        <ul class="menu-list">
+                            <li>    <a asp-page="/Index">Back to main</a></li>
+                        </ul>
+                    </div>
             </div>
             <div class="column is-9">
                 <product-manager v-if="menu === 0"></product-manager>
