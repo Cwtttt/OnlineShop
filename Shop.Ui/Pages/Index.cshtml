@@ -8,12 +8,11 @@
         <div class="columns is-multiline">
 
         @{
-            for(int i = 0; i < 6; i++)
-            {
+
 
                 foreach (var p in Model.Products)
                 {
-                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                    <div class="column is-3-desktop is-4-tablet is-6-mobile">
                         <a asp-page="Product" asp-route-name="@p.Name.Replace(" ","-")">
 
                             <div class="card" >
@@ -25,23 +24,41 @@
                                 </div>
 
                                 <div class="card-content">
+                                    @{
+                                        string cssClass = string.Empty;
+                                        string message = string.Empty;
+
+                                        if (p.StockCount == 0)
+                                        {
+                                            cssClass = "is-danger";
+                                            message = "Out of Stock";
+                                        }
+                                        else if (p.StockCount <= 10)
+                                        {
+                                            cssClass = "is-warning";
+                                            message = "Low on Stock";
+                                        }
+                                    }
+                                    @if (p.StockCount <= 10)
+                                       {
+                                        <div class="notification is-paddingless has-text-centered @cssClass">
+                                            @message
+                                        </div>
+                                       }
 
                                     <p class="title is-size-5">
                                         @p.Name - @p.Value
-                                    </p> 
+                                    </p>
 
                                     <p class="subtitle">
                                         @p.Description
                                     </p>
-
-                                    <div class="content">
-                                    </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 }
-            }
+            
         }
         </div>
     </div>

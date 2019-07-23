@@ -45,7 +45,7 @@
                     <input class="inpus" v-model="productModel.value" />
                 </div>
             </div>
-            <button class="button is-success" v-on:click="createProduct" v-if="!productModel.Id">Create product</button>
+            <button class="button is-success" v-on:click="createProduct" v-if="productModel.Id">Create product</button>
             <button class="button is-warning" v-on:click="updateProduct" v-else>Update product</button>
             <button class="button" v-on:click="cancel">Cancel</button>
         </div>
