@@ -16,9 +16,10 @@
 </head>
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" asp-page="/Index">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a>
 
@@ -34,23 +35,23 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <a class="navbar-item" asp-page="/Admin/Index">
-                    Admin</a>
+                        Admin
+                    </a>
                 }
 
             </div>
 
             <div class="navbar-end">
+                <vc:cart view="Small"></vc:cart>
+
                 @if (User.Identity.IsAuthenticated)
                 {
                     <a class="navbar-item" asp-controller="Account" asp-action="Logout">Sign Out</a>
                 }
-                else
-                {
-                    <a class="navbar-item" asp-page="/Accounts/Login">Sign In</a>
-                }
             </div>
         </div>
-    </nav>
+     </div>       
+</nav>
 
     <a asp-page="/Accounts/Login">Sign In</a>
     <a asp-controller="Account" asp-action="Logout">Sign Out</a>
@@ -59,11 +60,14 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - Shop.Ui</p>
-        </footer>
     </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Copy Rights, <a asp-page="/Admin/Index">Admin Login</a>
+            </p>
+        </div>
+    </footer>
 
 
 

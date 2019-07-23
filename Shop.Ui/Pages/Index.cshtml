@@ -4,34 +4,43 @@
     ViewData["Title"] = "Home page";
 }
 
-    <div>
-        <div class="columns">
+    <div class="section">
+        <div class="columns is-multiline">
 
         @{
-            foreach (var p in Model.Products)
+            for(int i = 0; i < 6; i++)
             {
-                <div class="column is-4-desktop is-6-mobile">
 
-                <a class="card" asp-page="Product" asp-route-name="@p.Name.Replace(" ","-")">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="~/images/White t-shirt.jpg" />
-                        </figure>
+                foreach (var p in Model.Products)
+                {
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <a asp-page="Product" asp-route-name="@p.Name.Replace(" ","-")">
+
+                            <div class="card" >
+
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="~/images/White t-shirt.jpg" />
+                                    </figure>
+                                </div>
+
+                                <div class="card-content">
+
+                                    <p class="title is-size-5">
+                                        @p.Name - @p.Value
+                                    </p> 
+
+                                    <p class="subtitle">
+                                        @p.Description
+                                    </p>
+
+                                    <div class="content">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="card-content">
-                        <p class="title">
-                            @p.Name - @p.Value
-                        </p> 
-                        <p class="title">
-                            @p.Description
-                        </p>
-
-
-                        <div class="content">
-                        </div>
-                    </div>
-                </a>
-                </div>
+                }
             }
         }
         </div>
