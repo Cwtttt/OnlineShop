@@ -65,7 +65,7 @@ namespace Shop.Ui.Pages.Checkout
                 StripeReference = charge.Id,
                 SessionId = sessionId,
 
-                Firstname = CartOrder.CustomerInformation.Firstname,
+                FirstName = CartOrder.CustomerInformation.Firstname,
                 LastName = CartOrder.CustomerInformation.LastName,
                 Email = CartOrder.CustomerInformation.Email,
                 PhoneNumber = CartOrder.CustomerInformation.PhoneNumber,

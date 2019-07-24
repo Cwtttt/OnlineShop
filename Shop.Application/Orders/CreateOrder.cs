@@ -22,7 +22,7 @@ namespace Shop.Application.Orders
             public string StripeReference { get; set; }
             public string SessionId { get; set; }
 
-            public string Firstname { get; set; }
+            public string FirstName { get; set; }
             public string LastName { get; set; }
             public string Email { get; set; }
             public string PhoneNumber { get; set; }
@@ -52,7 +52,7 @@ namespace Shop.Application.Orders
                 OrderRef = CreateOrderReference(),
                 StripeReference = request.StripeReference,
 
-                Firstname = request.Firstname,
+                FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
                 PhoneNumber = request.PhoneNumber,
