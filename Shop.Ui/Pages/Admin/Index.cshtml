@@ -28,14 +28,14 @@
         <div class="field">
             <label class="label">Product Name</label>
             <div class="control">
-                <input class="inpus" v-model="productModel.name" />
+                <input class="input" v-model="productModel.name" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">Product Description</label>
             <div class="control">
-                <input class="inpus" v-model="productModel.description" />
+                <input class="input" v-model="productModel.description" />
             </div>
         </div>
 
@@ -45,9 +45,9 @@
                 <input class="inpus" v-model="productModel.value" />
             </div>
         </div>
-        <button class="button is-success" v-on:click="createProduct" v-if="!productModel.Id">Create product</button>
+        <button class="button is-success" v-on:click="createProduct" v-if="!productModel.id">Create product</button>
         <button class="button is-warning" v-on:click="updateProduct" v-else>Update product</button>
-        <button class="button" v-on:click="cancel">Cancel</button>
+        <button class="button" v-on:click="cancel()">Cancel</button>
     </div>
 </div>
 
