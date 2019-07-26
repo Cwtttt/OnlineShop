@@ -26,6 +26,7 @@ namespace Shop.Ui.Controllers
         public IActionResult GetStocks() => Ok(new GetStocks(_ctx).Do());
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult GetStock(int id) => Ok(new GetStock(_ctx).Do(id));
 
         [HttpPost("")]
