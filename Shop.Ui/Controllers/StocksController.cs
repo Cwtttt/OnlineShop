@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shop.Application.Stocks;
 using Shop.Application.StockAdmin;
 using Shop.Database;
 using System;
@@ -22,7 +23,10 @@ namespace Shop.Ui.Controllers
 
 
         [HttpGet("")]
-        public IActionResult GetStock() => Ok(new GetStock(_ctx).Do());
+        public IActionResult GetStocks() => Ok(new GetStocks(_ctx).Do());
+
+        [HttpGet("{id}")]
+        public IActionResult GetStock(int id) => Ok(new GetStock(_ctx).Do(id));
 
         [HttpPost("")]
         public async Task<IActionResult> CreateStock([FromBody] CreateStock.Request request) => Ok(await new CreateStock(_ctx).Do(request));

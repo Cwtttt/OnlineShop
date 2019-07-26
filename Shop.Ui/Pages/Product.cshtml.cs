@@ -26,6 +26,7 @@ namespace Shop.Ui.Pages
 
 
         public GetProduct.ProductViewModel Product { get; set; }
+
         public async Task<IActionResult> OnGet(string name)
         {
             Product = await new GetProduct(_ctx).Do(name.Replace(" ", "-"));
@@ -42,7 +43,7 @@ namespace Shop.Ui.Pages
             if (stockAdded)
                 return RedirectToPage("Cart");
             else
-                //TODO: add a warning
+                return RedirectToPage("Warning");
 
                 return Page();
         }

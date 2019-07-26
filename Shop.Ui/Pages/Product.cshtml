@@ -4,7 +4,7 @@
 }
 
 
-<div class="hero">
+<div class="hero" id="app">
     <div class="hero-body">
         <div class="container">
             <div class="columns">
@@ -15,8 +15,8 @@
                 </div>
                 <div class="is-6">
                     <section class="content">
-                            <p class="title">@Model.Product.Name @Model.Product.Value</p>
-                            <p class="subtitle">@Model.Product.Description</p>
+                        <p class="title">@Model.Product.Name @Model.Product.Value</p>
+                        <p class="subtitle">@Model.Product.Description</p>
                         <p>
                             Jest dostępnych wiele różnych wersji Lorem Ipsum, ale większość zmieniła się pod wpływem dodanego humoru czy przypadkowych słów, które nawet w najmniejszym stopniu nie przypominają istniejących. Jeśli masz zamiar użyć fragmentu Lorem Ipsum, lepiej mieć pewność, że nie ma niczego „dziwnego” w środku tekstu. Wszystkie Internetowe generatory Lorem Ipsum mają tendencje do kopiowania już istniejących bloków, co czyni nasz pierwszym prawdziwym generatorem w Internecie. Używamy zawierającego ponad 200 łacińskich słów słownika, w kontekście wielu znanych sentencji, by wygenerować tekst wyglądający odpowiednio. To wszystko czyni „nasz” Lorem Ipsum wolnym od powtórzeń, humorystycznych wstawek czy niecharakterystycznych słów.
                         </p>
@@ -31,7 +31,7 @@
                                         <div class="field is-narrow">
                                             <div class="control">
                                                 <div class="select is-fullwidth">
-                                                    <select asp-for="CartViewModel.StockId" onchange="toggleStock(event)">
+                                                    <select v-model="stockId" asp-for="CartViewModel.StockId" onchange="toggleStock(event)">
                                                         @foreach (var s in Model.Product.Stock)
                                                         {
                                                             bool disable = s.Qty <= 0;
@@ -51,15 +51,15 @@
                                     <div class="field-body">
                                         <div class="field is-narrow">
                                             <div class="control">
-                                                <input class="input" asp-for="CartViewModel.Qty" value="1"/>
+                                                <input v-model="orderingQty" class="input" asp-for="CartViewModel.Qty" value="1" />
                                             </div>
-                                            @foreach(var stock in Model.Product.Stock)
+                                            @foreach (var stock in Model.Product.Stock)
                                             {
-                                                if(stock.Qty <= 10)
+                                                if (stock.Qty <= 10)
                                                 {
-                                                <p class="help is-danger is-hidden low-stock"  id="low-stock-@stock.Id" >
-                                                    @(stock.Qty == 0 ? "Out Stock" : $"{stock.Qty} Left")
-                                                </p>
+                                                    <p class="help is-danger is-hidden low-stock" id="low-stock-@stock.Id">
+                                                        @(stock.Qty == 0 ? "Out Stock" : $"{stock.Qty} Left")
+                                                    </p>
                                                 }
                                             }
                                         </div>
@@ -71,7 +71,8 @@
                                     <div class="field-body">
                                         <div class="field is-narrow">
                                             <div class="control">
-                                                <button class="button is-success" type="submit">Submit</button>
+                                                <button class="button is-success" type="submit" v-if="quantityOk">Submit</button>
+                                                <button class="button is-success" title="Disabled button" disabled v-else>Submit</button>
                                             </div>
                                         </div>
                                     </div>
@@ -85,8 +86,14 @@
     </div>
 </div>
 
-<script>
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/productUser.js"></script>
+}
 
+
+<script>
     var toggleStock = function (e) {
         console.log(e);
 
@@ -99,7 +106,7 @@
     }
 
     var showLowStock = function (id) {
-        var stockToShow = document.getElementById('low-stock-' +id);
+        var stockToShow = document.getElementById('low-stock-' + id);
 
         if (stockToShow !== null && stockToShow !== undefined)
             stockToShow.classList.remove('is-hidden');
@@ -107,5 +114,5 @@
     }
 
     showLowStock(document.getElementById('CartViewModel_StockId').value);
-
 </script>
+

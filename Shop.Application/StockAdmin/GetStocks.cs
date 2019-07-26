@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Shop.Application.StockAdmin
 {
-    public class GetStock
+    public class GetStocks
     {
         private ApplicationDbContext _ctx;
 
-        public GetStock(ApplicationDbContext ctx)
+        public GetStocks(ApplicationDbContext ctx)
         {
             _ctx = ctx;
         }
