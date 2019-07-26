@@ -43,8 +43,6 @@ namespace Shop.Ui.Pages
             if (stockAdded)
                 return RedirectToPage("Cart");
             else
-                return RedirectToPage("Warning");
-
                 return Page();
         }
     }
