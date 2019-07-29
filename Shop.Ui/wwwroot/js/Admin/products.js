@@ -10,12 +10,16 @@ data: {
         },
         loading: false,
         editing: false,
-        products: []
+    products: [],
+        selectedFile: null
     },
     mounted() {
         this.getProducts();
     },
     methods: {
+        onFileSelected(event) {
+            this.selectedFile = event.target.files[0];
+        },
         getProduct(id) {
             this.loading = true;
             axios.get('/products/' + id)

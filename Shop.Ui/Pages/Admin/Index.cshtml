@@ -45,6 +45,12 @@
                 <input class="inpus" v-model="productModel.value" />
             </div>
         </div>
+        <div class="field">
+            <label class="label">Image</label>
+            <div class="control">
+                <input type="file" @@change="onFileSelected" />
+            </div>
+        </div>
         <button class="button is-success" v-on:click="createProduct" v-if="!productModel.id">Create product</button>
         <button class="button is-warning" v-on:click="updateProduct" v-else>Update product</button>
         <button class="button" v-on:click="cancel()">Cancel</button>
