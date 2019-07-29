@@ -40,7 +40,7 @@ namespace Shop.Application.Cart
 
             var cartList= JsonConvert.DeserializeObject<List<CartProduct>>(stringObject);
 
-            var responde = _ctx.Stock
+            var response = _ctx.Stock
                 .Include(x => x.Product)
                 .Where(x => cartList.Any(y => y.StockId == x.Id))
                 .Select(x => new Response
@@ -53,7 +53,7 @@ namespace Shop.Application.Cart
                 })
                 .ToList();
 
-            return responde;
+            return response;
         }
     }
 }

@@ -15,10 +15,10 @@ namespace Shop.Application.Cart
         private ApplicationDbContext _ctx;
         private ISession _session;
 
-        public DeleteFromCart(ISession session, ApplicationDbContext ctx)
+        public DeleteFromCart( ISession session, ApplicationDbContext ctx)
         {
-            _ctx = ctx;
             _session = session;
+            _ctx = ctx;
         }
 
         public class Request
@@ -29,28 +29,19 @@ namespace Shop.Application.Cart
 
         public async Task<bool> Do(Request request)
         {
-            var stockOnHold = _ctx.StocksOnHold.Where(x => x.SessionId == _session.Id).ToList();
-            var stockToHold = _ctx.Stock.Where(x => x.Id == request.StockId).FirstOrDefault();
+            var stocksOnHold = _ctx.StocksOnHold.Where(x => x.SessionId == _session.Id).ToList();
+            var stockToExtension = _ctx.Stock.Where(x => x.Id == request.StockId).FirstOrDefault();
 
-            if (stockToHold.Qty < request.Qty)
-            {
-                return false;
-            }
+            stockToExtension.Qty += request.Qty;
 
-            _ctx.StocksOnHold.Remove(new StockOnHold
-            {
-                StockId = stockToHold.Id,
-                SessionId = _session.Id,
-                Qty = request.Qty,
-                ExpiryDate = DateTime.Now.AddMinutes(20)
-            });
-
-            stockToHold.Qty = stockToHold.Qty + request.Qty;
-
-            foreach (var stock in stockOnHold)
+            foreach (var stock in stocksOnHold)
             {
                 stock.ExpiryDate = DateTime.Now.AddMinutes(20);
             }
+
+            var stockOnHold = _ctx.StocksOnHold.Where(x => x.StockId == request.StockId).FirstOrDefault();
+
+            _ctx.StocksOnHold.Remove(stockOnHold);
 
             await _ctx.SaveChangesAsync();
 
@@ -62,18 +53,10 @@ namespace Shop.Application.Cart
                 cartList = JsonConvert.DeserializeObject<List<CartProduct>>(stringObject);
             }
 
-            if (cartList.Any(x => x.StockId == request.StockId))
-            {
-                cartList.Find(x => x.StockId == request.StockId).Qty -= request.Qty;
-            }
-            else
-            {
-                cartList.Remove(new CartProduct
-                {
-                    StockId = request.StockId,
-                    Qty = request.Qty
-                });
-            }
+            var cartProductToRemove = cartList.Where(x => x.StockId == request.StockId).FirstOrDefault();
+
+            cartList.Remove(cartProductToRemove);
+
 
             stringObject = JsonConvert.SerializeObject(cartList);
 

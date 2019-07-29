@@ -51,7 +51,7 @@
                                     <div class="field-body">
                                         <div class="field is-narrow">
                                             <div class="control">
-                                                <input v-model="orderingQty" class="input" asp-for="CartViewModel.Qty" value="1" />
+                                                <input v-model="orderingQty" class="input" min="1" asp-for="CartViewModel.Qty" value="1" />
                                             </div>
                                             @foreach (var stock in Model.Product.Stock)
                                             {
@@ -98,7 +98,6 @@
         console.log(e);
 
         var stockToHide = document.querySelectorAll('.low-stock')
-
 
         stockToHide.forEach(function (e) {
             e.classList.add('is-hidden');
