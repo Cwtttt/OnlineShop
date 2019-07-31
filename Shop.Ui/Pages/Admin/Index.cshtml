@@ -55,7 +55,7 @@
         </div>
         <div class="field">
             <div class="control">
-                <img v-bind:src="productModel.image"  />
+                <img height="350" width="350" v-bind:src="productModel.image"  />
             </div>
         </div>
         <button class="button is-success" v-on:click="createProduct" v-if="!productModel.id">Create product</button>
