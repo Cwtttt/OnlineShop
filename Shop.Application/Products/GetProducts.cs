@@ -24,6 +24,7 @@ namespace Shop.Application.Products
                 Name = x.Name,
                 Description = x.Description,
                 Value = $"{x.Value.ToString("N2")}$",
+                Image = x.Image,
 
                 StockCount = x.Stock.Sum(y => y.Qty)
             })
@@ -33,6 +34,7 @@ namespace Shop.Application.Products
             public string Name { get; set; }
             public string Description { get; set; }
             public string Value { get; set; }
+            public string Image { get; set; }
             public int StockCount { get; set; }
         }
     }

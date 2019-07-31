@@ -20,9 +20,11 @@
         this.getProducts();
     },
     methods: {
+
         handleFileUpload(event) {
             this.file = event.target.files[0];
         },
+
         handleFileUpload() {
 
             this.file = this.$refs.file.files[0];
@@ -41,9 +43,8 @@
                     reader.readAsDataURL(this.file);
                 }
             }
-
-
         },
+
         createProduct() {
             this.loading = true;
             axios.post('/products', this.productModel)
@@ -59,6 +60,7 @@
                     this.editing = false;
                 });
         },
+
         getProduct(id) {
             this.loading = true;
             axios.get('/products/' + id)
@@ -69,7 +71,8 @@
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        value: product.value
+                        value: product.value,
+                        image: product.image
                     };
                 })
                 .catch(err => {
@@ -79,6 +82,7 @@
                     this.loading = false;
                 });
         },
+
         getProducts() {
             this.loading = true;
             axios.get('/products')
@@ -109,6 +113,7 @@
                     this.editing = false;
                 });
         },
+
         deleteProduct(id, index) {
             this.loading = true;
             axios.delete('/products/' + id)
@@ -123,15 +128,18 @@
                     this.loading = false;
                 });
         },
+
         newProduct() {
             this.editing = true;
             this.productModel.id = 0;
         },
+
         editProduct(id, index) {
             this.objectIndex = index;
             this.getProduct(id);
             this.editing = true;
         },
+
         cancel() {
             this.editing = false;
         }
