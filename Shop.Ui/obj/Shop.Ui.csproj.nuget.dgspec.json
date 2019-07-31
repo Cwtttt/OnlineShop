@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\shop.ui\\Shop.Ui.csproj": {}
+    "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Ui\\Shop.Ui.csproj": {}
   },
   "projects": {
     "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Application\\Shop.Application.csproj": {
@@ -184,14 +184,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\shop.ui\\Shop.Ui.csproj": {
+    "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Ui\\Shop.Ui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\shop.ui\\Shop.Ui.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Ui\\Shop.Ui.csproj",
         "projectName": "Shop.Ui",
-        "projectPath": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\shop.ui\\Shop.Ui.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Ui\\Shop.Ui.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\shop.ui\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ShopOnline\\Shop.Ui\\Shop.Ui\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

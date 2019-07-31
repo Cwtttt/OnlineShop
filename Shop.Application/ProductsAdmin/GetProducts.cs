@@ -20,7 +20,8 @@ namespace Shop.Application.ProductsAdmin
             {
                 Id = x.Id,
                 Name = x.Name,
-                Value = x.Value
+                Value = x.Value,
+                Image = x.Image
             });
         public class ProductViewModel
         {
@@ -28,6 +29,7 @@ namespace Shop.Application.ProductsAdmin
             public string Name { get; set; }
             public string Description { get; set; }
             public decimal Value { get; set; }
+            public string Image { get; set; }
         }
     }
 

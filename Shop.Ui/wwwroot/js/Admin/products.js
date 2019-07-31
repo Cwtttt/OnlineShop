@@ -1,24 +1,63 @@
 ﻿var app = new Vue({
     el: '#app',
-data: {
+    data: {
         objectIndex: 0,
         productModel: {
             id: 0,
-            name: "Product Name",
-            description: "Product Description",
-            value: 1.99
+            name: "Name",
+            description: "Description",
+            value: 1.99,
+            image: ''
         },
         loading: false,
         editing: false,
-    products: [],
-        selectedFile: null
+        products: [],
+        file: '',
+        showPreview: false,
+        imagePreview: ''
     },
     mounted() {
         this.getProducts();
     },
     methods: {
-        onFileSelected(event) {
-            this.selectedFile = event.target.files[0];
+        handleFileUpload(event) {
+            this.file = event.target.files[0];
+        },
+        handleFileUpload() {
+
+            this.file = this.$refs.file.files[0];
+
+            let reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                this.showPreview = true;
+                this.productModel.image = reader.result;
+                    
+
+            }.bind(this), false);
+
+            if (this.file) {
+                if (/\.(jpe?g|png|gif)$/i.test(this.file.name)) {
+                    reader.readAsDataURL(this.file);
+                }
+            }
+
+
+        },
+        createProduct() {
+            this.loading = true;
+            axios.post('/products', this.productModel)
+                .then(res => {
+                console.log(res.data);
+                this.products.push(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .then(() => {
+                    this.loading = false;
+                    this.editing = false;
+                });
         },
         getProduct(id) {
             this.loading = true;
@@ -54,20 +93,7 @@ data: {
                     this.loading = false;
                 });
         },
-        createProduct() {
-            axios.post('/products', this.productModel)
-                .then(res => {
-                    console.log(res.data);
-                    this.products.push(res.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                })
-                .then(() => {
-                    this.loading = false;
-                    this.editing = false;
-                });
-        },
+
         updateProduct() {
             this.loading = true;
             axios.put('/products', this.productModel)
@@ -111,5 +137,5 @@ data: {
         }
     },
     computed: {
-    }
+    },
 });

@@ -26,7 +26,7 @@ namespace Shop.Ui.Controllers
         public IActionResult GetProduct(int id) => Ok(new GetProduct(_ctx).Do(id));
 
         [HttpPost("")]
-        public async Task<IActionResult> CreateProduct([FromBody] CreateProduct.Request request) => Ok(await new CreateProduct(_ctx).Do(request));
+        public async Task<IActionResult> CreateProduct([FromBody]CreateProduct.Request request) => Ok(await new CreateProduct(_ctx).Do(request));
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id) => Ok((await new DeleteProduct(_ctx).Do(id)));

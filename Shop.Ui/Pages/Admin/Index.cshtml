@@ -48,7 +48,12 @@
         <div class="field">
             <label class="label">Image</label>
             <div class="control">
-                <input type="file" @@change="onFileSelected" />
+                <input type="file" id="file" ref="file" accept="image/*" v-on:change="handleFileUpload()" />
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <img v-bind:src="productModel.image" v-show="showPreview" />
             </div>
         </div>
         <button class="button is-success" v-on:click="createProduct" v-if="!productModel.id">Create product</button>

@@ -23,7 +23,8 @@ namespace Shop.Application.ProductsAdmin
             {
                 Name = request.Name,
                 Description = request.Description,
-                Value = request.Value
+                Value = request.Value,
+                Image = request.Image
             };
 
             _context.Products.Add(product);
@@ -35,7 +36,8 @@ namespace Shop.Application.ProductsAdmin
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
-                Value = product.Value
+                Value = product.Value,
+                Image = product.Image
             };
         }
         public class Request
@@ -43,6 +45,8 @@ namespace Shop.Application.ProductsAdmin
             public string Name { get; set; }
             public string Description { get; set; }
             public decimal Value { get; set; }
+            public string Image { get; set; }
+
         }
 
         public class Response
@@ -51,6 +55,8 @@ namespace Shop.Application.ProductsAdmin
             public string Name { get; set; }
             public string Description { get; set; }
             public decimal Value { get; set; }
+            public string Image { get; set; }
+
         }
     }
 
