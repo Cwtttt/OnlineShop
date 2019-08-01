@@ -72,7 +72,7 @@ using Microsoft.AspNetCore.Authorization;
             WriteLiteral("                <div class=\"column is-3-desktop is-4-tablet is-6-mobile\">\r\n                    ");
             EndContext();
             BeginContext(350, 1919, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12ef89c2bb4b42928d69183f724e0534", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92ede8ecbb744c228c1886b800b527dd", async() => {
                 BeginContext(414, 209, true);
                 WriteLiteral("\r\n\r\n                        <div class=\"card\" >\r\n\r\n                            <div class=\"card-image\">\r\n                                <figure class=\"image is-4by3\">\r\n                                    <img");
                 EndContext();
