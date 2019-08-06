@@ -8,5 +8,6 @@ namespace Shop.Domain.Models
     {
         public int StockId { get; set; }
         public int Qty { get; set; }
+        public string Image { get; set; }
     }
 }

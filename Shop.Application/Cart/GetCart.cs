@@ -26,8 +26,9 @@ namespace Shop.Application.Cart
             public string Name { get; set; }
             public string Value { get; set; }
             public decimal RealValue { get; set; }
+            public string Image { get; set; }
+            public string StockDescription { get; set; }
             public int Qty { get; set; }
-
             public int StockId { get; set; }
         }
 
@@ -49,6 +50,8 @@ namespace Shop.Application.Cart
                     Value = $"{x.Product.Value.ToString("N2")}$",
                     RealValue = x.Product.Value,
                     StockId = x.Id,
+                    StockDescription = x.Description,
+                    Image = x.Product.Image,
                     Qty = cartList.FirstOrDefault(y => y.StockId == x.Id).Qty
                 })
                 .ToList();

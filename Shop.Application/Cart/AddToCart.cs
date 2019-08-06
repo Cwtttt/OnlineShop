@@ -25,6 +25,7 @@ namespace Shop.Application.Cart
         {
             public int StockId { get; set; }
             public int Qty { get; set; }
+            public string Image { get; set; }
         }
 
         public async Task<bool> Do(Request request)
@@ -71,7 +72,8 @@ namespace Shop.Application.Cart
                 cartList.Add(new CartProduct
                 {
                     StockId = request.StockId,
-                    Qty = request.Qty
+                    Qty = request.Qty,
+                    Image = request.Image
                 });
             }
 

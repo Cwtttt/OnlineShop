@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Shop.Application.Cart;
+using Shop.Application.Mails;
 using Shop.Application.Orders;
 using Shop.Database;
 using Stripe;
@@ -83,6 +84,28 @@ namespace Shop.Ui.Pages.Checkout
             });
 
             HttpContext.Session.SetString("cart", string.Empty);
+
+            new SendOrderInfo().Do(new SendOrderInfo.Request
+            {
+                FirstName = CartOrder.CustomerInformation.Firstname,
+                LastName = CartOrder.CustomerInformation.LastName,
+                Email = CartOrder.CustomerInformation.Email,
+                PhoneNumber = CartOrder.CustomerInformation.PhoneNumber,
+                Address1 = CartOrder.CustomerInformation.Address1,
+                Address2 = CartOrder.CustomerInformation.Address2,
+                City = CartOrder.CustomerInformation.City,
+                PostCode = CartOrder.CustomerInformation.PostCode,
+
+                Stocks = CartOrder.Products.Select(x => new SendOrderInfo.Stock
+                {
+                    Id = x.StockId,
+                    Description = _ctx.Stock.Where(y => y.Id == x.StockId).Select(y => y.Description).FirstOrDefault(),
+                    Qty = x.Qty,
+                    ProductId = x.ProductId,
+                    Product = _ctx.Products.Where(y => y.Id == x.ProductId).FirstOrDefault()
+                })
+                .ToList()
+            });
 
             return RedirectToPage("/Index");
         }
