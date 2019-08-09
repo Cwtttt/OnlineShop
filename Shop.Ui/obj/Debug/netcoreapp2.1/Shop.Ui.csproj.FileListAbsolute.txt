@@ -51,3 +51,4 @@ C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Shop.Ui
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Shop.Ui.dll
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Shop.Ui.pdb
 C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\Razor\Pages\Send.g.cshtml.cs
+C:\Users\User\Desktop\ShopOnline\Shop.Ui\Shop.Ui\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

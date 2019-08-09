@@ -5,6 +5,7 @@ using MailKit.Net.Smtp;
 using MimeKit;
 using Shop.Domain.Models;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Mails
 {
@@ -14,7 +15,7 @@ namespace Shop.Application.Mails
         {
             var message = new MimeMessage();
 
-            message.From.Add(new MailboxAddress("Online Shop", "xxxxxxxxxxxx"));
+            message.From.Add(new MailboxAddress("Online Shop", "xxx@gmail.com"));
 
             message.To.Add(new MailboxAddress(request.FirstName, request.Email));
 
@@ -30,7 +31,7 @@ namespace Shop.Application.Mails
             {
                 client.Connect("smtp.gmail.com", 587, false);
 
-                client.Authenticate("xxxxxx", "xxxxxxxxxx");
+                client.Authenticate("xxxx@gmail.com", "secret");
 
                 client.Send(message);
 
@@ -44,18 +45,17 @@ namespace Shop.Application.Mails
 
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("Twoje zamówione produkty: " + "\n");
+            sb.Append("Twoje zamówione produkty: " + "\n" + "\n");
 
             int i = 0;
 
             foreach (var stock in request.Stocks)
             {
                 i++;
-                sb.AppendFormat("<br/>{0}. {1} Rozmiar: {2}", i, stock.Product.Name, stock.Description);
+                sb.AppendFormat("{0}. {1} Rozmiar: {2}", i, stock.Product.Name, stock.Description);
                 sb.Append("\n");
             }
-
-            sb.Append("Twoje dane do wysylki: " + "\n");
+            sb.Append("\n" + "Twoje dane do wysylki: " + "\n");
             sb.AppendFormat("Imie: {0}", request.FirstName);
             sb.Append("\n");
             sb.AppendFormat("Nazwisko: {0}", request.LastName);
